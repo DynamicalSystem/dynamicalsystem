@@ -53,7 +53,7 @@ class Publisher(abc.ABC):
         )
 
 
-class BlueSky(Publisher):
+class Bluesky(Publisher):
     def __init__(self, watermark: Watermark) -> None:
         super().__init__(watermark)
         self.client = Client(base_url=self.config.bluesky_url)

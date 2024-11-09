@@ -41,7 +41,7 @@ class _Config:
         self._parse_context(context)
 
         root_folder = getenv(f"{self._namespace.upper()}_FOLDER") or exit(
-            f"{self.namespace.upper()}_FOLDER not set"
+            f"{self._namespace.upper()}_FOLDER not set"
         )
 
         environment = getenv(f"{self._namespace.upper()}_ENVIRONMENT") or exit(

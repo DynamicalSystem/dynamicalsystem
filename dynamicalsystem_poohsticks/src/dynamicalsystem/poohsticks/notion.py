@@ -1,11 +1,13 @@
 from dynamicalsystem.halogen.config import config_instance
 from dynamicalsystem.halogen.utils import url_join
+from dynamicalsystem.halogen import logger
 from requests import get, post
 
 
 class Notion:
     def __init__(self, chart, placing):
         self.config = config_instance(__name__)
+        self.logger = logger
         self.chart = chart
         self.placing = placing
         self.headers = {
@@ -76,5 +78,5 @@ class Notion:
 
             return d
         except (KeyError, IndexError, TypeError) as e:
-            self.logger.exception(e)
+            self.logger.warning(str(e) + f" for placing {str(self.placing)} in chart {self.chart}")
             return False

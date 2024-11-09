@@ -54,4 +54,4 @@ sync:
 	rye sync
 
 test:
-	rye test --package dynamicalsystem-pytests
+	pytest --pyargs dynamicalsystem.pytests
